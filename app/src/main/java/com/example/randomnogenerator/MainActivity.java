@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 int low = Integer.parseInt(lowStr);
                 int high = Integer.parseInt(highStr);
 
+                if(high<low)
+                {
+                    Toast.makeText(getApplicationContext(), "upper limit must be greater", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
 
                 intent.putExtra("low", low);
